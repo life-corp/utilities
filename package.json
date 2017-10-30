@@ -1,5 +1,5 @@
 {
-  "name": "utilities",
+  "name": "ymp-utilities",
   "version": "0.2.1",
   "description": "",
   "main": "index.js",
@@ -19,13 +19,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/life-corp/utilities.git"
+    "url": "git+https://github.com/life-corp/ymp-utilities.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/life-corp/utilities/issues"
+    "url": "https://github.com/life-corp/ymp-utilities/issues"
   },
-  "homepage": "https://github.com/life-corp/utilities#readme"
+  "homepage": "https://github.com/life-corp/ymp-utilities#readme"
 }
