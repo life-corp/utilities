@@ -11,7 +11,7 @@ const mountShare = ({ username, password, mountPath, sharePath }) =>
         exec(cmd, (err, stdout, stderr) => {
           if (err) {
             if (fileExists(err)) {
-              return resolve();
+              return resolve(mountPath);
             }
             if (err.message.indexOf(password) >= 0) {
               err.message = err.message.replace(password, '********');
@@ -23,7 +23,7 @@ const mountShare = ({ username, password, mountPath, sharePath }) =>
       })
       .catch(err => {
         if (fileExists(err)) {
-          resolve();
+          resolve(mountPath);
           return;
         }
         reject(err);
