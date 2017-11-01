@@ -33,7 +33,7 @@ copy([
 ```
 
 
-#### `mkdirPromise(dirPath, ignoreIfExists)`
+### `mkdirPromise(dirPath, ignoreIfExists)`
 *`mkdirp` with a promise API.*
 
 `dirPath` - The directory path to create, also creates any directories along the way that don't exist.
