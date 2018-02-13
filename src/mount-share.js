@@ -15,6 +15,9 @@ const mountShare = ({ username, password, mountPath, sharePath }) =>
             }
             const passwordRegex = new RegExp(password, 'g');
             err.message = err.message.replace(passwordRegex, '********');
+            if (err.cmd) {
+              err.cmd = err.cmd.replace(passwordRegex, '********');
+            }
             return reject(err);
           }
           resolve(mountPath);
