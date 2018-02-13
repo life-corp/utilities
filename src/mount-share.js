@@ -13,9 +13,8 @@ const mountShare = ({ username, password, mountPath, sharePath }) =>
             if (fileExists(err)) {
               return resolve(mountPath);
             }
-            if (err.message.indexOf(password) >= 0) {
-              err.message = err.message.replace(password, '********');
-            }
+            const passwordRegex = new RegExp(password, 'g');
+            err.message = err.message.replace(passwordRegex, '********');
             return reject(err);
           }
           resolve(mountPath);
@@ -25,6 +24,9 @@ const mountShare = ({ username, password, mountPath, sharePath }) =>
         if (fileExists(err)) {
           resolve(mountPath);
           return;
+        }
+        if (err.message.indexOf(password) >= 0) {
+          err.message = err.message.replace(password, '********');
         }
         reject(err);
       });
