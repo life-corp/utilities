@@ -28,9 +28,6 @@ const mountShare = ({ username, password, mountPath, sharePath }) =>
           resolve(mountPath);
           return;
         }
-        if (err.message.indexOf(password) >= 0) {
-          err.message = err.message.replace(password, '********');
-        }
         reject(err);
       });
   });
