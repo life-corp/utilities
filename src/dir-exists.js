@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const dirExists = (dir) => {
+const dirExists = (directory) => {
   return new Promise((resolve, reject) => {
     fs.stat(directory, function(err, stats) {
       if (err) {
