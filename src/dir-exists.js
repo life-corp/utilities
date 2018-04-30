@@ -4,7 +4,7 @@ const dirExists = (directory) => {
   return new Promise((resolve, reject) => {
     fs.stat(directory, function(err, stats) {
       if (err) {
-        if (err.errno === 34) {
+        if (err.code === 'ENOENT') {
           // Directory does not exist.
           resolve(false);
         } else {
